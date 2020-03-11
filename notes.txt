@@ -1,0 +1,54 @@
+CREATE TABLE `users` (
+ `user_id` int(11) NOT NULL AUTO_INCREMENT,
+ `first_name` char(30) NOT NULL,
+ `last_name` char(30) NOT NULL,
+ `username` varchar(30) DEFAULT NULL,
+ `email` varchar(50) DEFAULT NULL,
+ `password` varchar(64) DEFAULT NULL,
+ `activation` char(32) DEFAULT NULL,
+ `activation2` char(32) DEFAULT NULL,
+ `gender` char(6) DEFAULT NULL,
+ `phonenumber` char(15) DEFAULT NULL,
+ `moreinformation` varchar(300) DEFAULT NULL,
+ `profilepicture` varchar(55) DEFAULT NULL,
+ PRIMARY KEY (`user_id`)
+)
+
+CREATE TABLE  forgotpassword(
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id int(11) not null,
+rkey char(32) not null,
+time int(11) not null,
+status varchar(7) not null
+);
+
+
+CREATE TABLE rememberme (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+authentificator1 char(20) ,
+f2authentificator2 char(64) ,
+user_id int(11) ,
+expires datetime 
+);
+
+
+CREATE TABLE carsharetrips(
+trip_id INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+user_id INT(4), 
+departure CHAR(30), 
+departurecoord CHAR(30), 
+destination CHAR(30), 
+destinationcoord CHAR(30), 
+price CHAR(10), 
+seatsavailable CHAR(2), 
+regular CHAR(1), 
+date CHAR(20), 
+time CHAR(10), 
+monday CHAR(1), 
+tuesday CHAR(1), 
+wednesday CHAR(1), 
+thursday CHAR(1), 
+friday CHAR(1), 
+saturday CHAR(1), 
+sunday CHAR(1)
+);
